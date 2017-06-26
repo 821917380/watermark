@@ -4,9 +4,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.cuput.watermark.view.Watermark
+    <com.cuput.watermark.view.WatermarkView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:text="工号12342B187">
-    </com.cuput.watermark.view.Watermark>
+    </com.cuput.watermark.view.WatermarkView>
 </LinearLayout>

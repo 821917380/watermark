@@ -3,10 +3,8 @@ package com.cuput.watermark.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.cuput.watermark.R;
@@ -16,7 +14,7 @@ import com.cuput.watermark.utils.DisplayUtil;
  * Created by wei on 2017-06-22.
  */
 
-public class Watermark extends View {
+public class WatermarkView extends View {
     private final Context mContext;
     private Paint mPaint;
     private int viewWidth;
@@ -30,20 +28,20 @@ public class Watermark extends View {
     private float textStrokeWidth; // 画笔粗细
     private float textAngle; // 旋转度数
 
-    public Watermark(Context context) {
+    public WatermarkView(Context context) {
         super(context);
         mContext = context;
         initPaint();
     }
 
-    public Watermark(Context context, AttributeSet attributeSet) {
+    public WatermarkView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         mContext = context;
         getAttrs(context, attributeSet);
         initPaint();
     }
 
-    public Watermark(Context context, AttributeSet attributeSet, int defStyleAttr) {
+    public WatermarkView(Context context, AttributeSet attributeSet, int defStyleAttr) {
         super(context, attributeSet, defStyleAttr);
         mContext = context;
         getAttrs(context, attributeSet);
@@ -56,13 +54,13 @@ public class Watermark extends View {
      * @param attributeSet
      */
     private void getAttrs(Context context, AttributeSet attributeSet) {
-        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.Watermark);
-        this.text = typedArray.getString(R.styleable.Watermark_text);
-        this.textColor = typedArray.getColor(R.styleable.Watermark_textColor, context.getResources().getColor(R.color.textColor));
-        this.textSize = typedArray.getDimension(R.styleable.Watermark_textSize, 20F);
-        this.textAlpha = typedArray.getInt(R.styleable.Watermark_textAlpha, 120);
-        this.textStrokeWidth = typedArray.getFloat(R.styleable.Watermark_textStrokeWidth, 3.0F);
-        this.textAngle = typedArray.getFloat(R.styleable.Watermark_textAngle, 25);
+        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.WatermarkView);
+        this.text = typedArray.getString(R.styleable.WatermarkView_text);
+        this.textColor = typedArray.getColor(R.styleable.WatermarkView_textColor, context.getResources().getColor(R.color.textColor));
+        this.textSize = typedArray.getDimension(R.styleable.WatermarkView_textSize, 20F);
+        this.textAlpha = typedArray.getInt(R.styleable.WatermarkView_textAlpha, 120);
+        this.textStrokeWidth = typedArray.getFloat(R.styleable.WatermarkView_textStrokeWidth, 3.0F);
+        this.textAngle = typedArray.getFloat(R.styleable.WatermarkView_textAngle, 25);
     }
 
     private void initPaint() {
